@@ -24,3 +24,7 @@ Route::get('convenio','ConvenioController@index')->name('index.convenio');
 
 //Convocatorias
 Route::get('convocatoria','ConvocatoriaController@index')->name('index.convocatoria');
+
+//Noticias
+Route::get('noticia','NoticiaController@index')->name('index.noticia');
+Route::get('noticia/show','NoticiaController@show')->name('show.noticia');
