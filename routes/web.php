@@ -14,3 +14,7 @@ use Illuminate\Support\Facades\Route;
 
 //Inicio
 Route::get('/', 'InicioController@index')->name('inicio');
+
+//Eventos
+Route::get('evento','EventoController@index')->name('index.evento');
+Route::get('evento/show','EventoController@show')->name('show.evento');
