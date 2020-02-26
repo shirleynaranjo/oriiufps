@@ -18,3 +18,9 @@ Route::get('/', 'InicioController@index')->name('inicio');
 //Eventos
 Route::get('evento','EventoController@index')->name('index.evento');
 Route::get('evento/show','EventoController@show')->name('show.evento');
+
+//Convenios
+Route::get('convenio','ConvenioController@index')->name('index.convenio');
+
+//Convocatorias
+Route::get('convocatoria','ConvocatoriaController@index')->name('index.convocatoria');
