@@ -31,3 +31,15 @@ Route::get('noticia/show','NoticiaController@show')->name('show.noticia');
 
 //Experiencia
 Route::get('experiencia','ExperienciaController@index')->name('index.experiencia');
+
+//Presentacion
+Route::get('presentacion','PresentacionController@index')->name('index.presentacion');
+
+//Vision
+Route::get('vision','VisionController@index')->name('index.vision');
+
+//Mision
+Route::get('mision','MisionController@index')->name('index.mision');
+
+//Contacto
+Route::get('contacto','ContactoController@index')->name('index.contacto');
