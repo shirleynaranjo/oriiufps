@@ -28,3 +28,6 @@ Route::get('convocatoria','ConvocatoriaController@index')->name('index.convocato
 //Noticias
 Route::get('noticia','NoticiaController@index')->name('index.noticia');
 Route::get('noticia/show','NoticiaController@show')->name('show.noticia');
+
+//Experiencia
+Route::get('experiencia','ExperienciaController@index')->name('index.experiencia');
