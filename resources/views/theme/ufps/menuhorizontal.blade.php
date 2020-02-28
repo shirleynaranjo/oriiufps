@@ -1,6 +1,6 @@
 <div class="menu-responsive">
     <!-- Logo -->
-    <a class="logo logo-responsive" href="index.html">
+    <a class="logo logo-responsive" href="{{route('inicio')}}">
         <img src="{{asset("assets/$theme/img/horizontal_logo_pequeno.png")}}" alt="Logo">
     </a><!-- End Logo -->
 
@@ -22,12 +22,11 @@
                     ORII
                 </a>
                 <ul class="dropdown-menu">
-                    <li class="dropdown-submenu">
-                        <a href="javascript:void(0);">Quienes Somos</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{{url("")}}"><i class="fa fa-sitemap" aria-hidden="true"></i>Presentacion</a></li>                            
-                        </ul>
-                    </li>                    
+                    <li><a href="{{url("")}}">Presentación</a></li>
+                    <li><a href="{{url("")}}">Misión</a></li>
+                    <li><a href="{{url("")}}">Visión</a></li>
+                    <li><a href="{{url("")}}">Contacto</a></li>
+                    
                 </ul>
             </li>
 
