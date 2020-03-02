@@ -43,3 +43,8 @@ Route::get('mision','MisionController@index')->name('index.mision');
 
 //Contacto
 Route::get('contacto','ContactoController@index')->name('index.contacto');
+
+//Movilidad
+Route::get('movilidad/docente','MovilidadController@indexDocente')->name('index.movilidadD');
+Route::get('movilidad/estudiante','MovilidadController@indexEstudiante')->name('index.movilidadE');
+Route::get('movilidad/comunidad_extranjera','MovilidadController@indexExtranjera')->name('index.movilidadEx');
