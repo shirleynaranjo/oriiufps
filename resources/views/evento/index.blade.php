@@ -3,7 +3,7 @@
 Eventos
 @endsection
 
-@section('content')    
+@section('content')
 
 @section('titulo1')
 Eventos
@@ -34,60 +34,40 @@ Eventos
                 <table id="table_noticia" class="table table-bordered table-striped">
                     <thead>
                         <tr>
+                            <th style="width: 20%">Imagen</th>
+                            <th style="width: 10%">Fecha</th>
                             <th>Titulo</th>
-                            <th style="width: 20%">Lugar</th>
-                            <th style="width: 20%">Fecha</th>
                         </tr>
                     </thead>
 
                     <tbody>
+                        @foreach ($eventos as $evento)
                         <tr>
-                            <td>
-                                <a href=""">
-                                    Fechas Pruebas EKT - 2020
-                                </a>
+                            <td><img class="img-responsive" src="{{$evento->imagenMiniatura}}" alt="">
                             </td>
-                            <td>ver info</td>
-                            <td>ver info</td>
-                        </tr>
-                        <tr>
                             <td>
-                                <a href=""">
-                                    Fechas Pruebas EKT - 2020
-                                </a>
+                                <h3>
+                                    <b>{{$evento->fechaEvento}}</b>
+                                </h3>
                             </td>
-                            <td>ver info</td>
-                            <td>ver info</td>
-                        </tr>
-                        <tr>
                             <td>
-                                <a href=""">
-                                    Fechas Pruebas EKT - 2020
-                                </a>
+                                <h3><b>
+                                        <a href="{{route('show.evento', ['idEvento'=> $evento->idEvento])}}">
+                                            {{$evento->tituloEvento}}
+                                        </a>
+                                    </b></h3>
                             </td>
-                            <td>ver info</td>
-                            <td>ver info</td>
                         </tr>
-                        {{-- @foreach ($eventos as $evento)
-                        <tr>
-                            <td>
-                                <a href="{{route('evento_completa', ['idEvento'=> $evento->idEvento])}}">
-                                    {{$evento->tituloEvento}}
-                                </a>
-                            </td>
-                            <td>{{$evento->lugarEvento}}</td>
-                            <td>{{$evento->fechaEvento}}</td>
-                        </tr>
-                        @endforeach --}}
+                        @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-    {{-- <div class="wrapper">
+    <div class="wrapper">
         <!-- Inicio Header Noticia-->
-        @include("noticia/footerultimasnoticia")
+        @include("noticia/ultimasnoticias")
         <!-- Fin Header Noticias-->
-    </div> --}}
+    </div>
 </div>
 @endsection

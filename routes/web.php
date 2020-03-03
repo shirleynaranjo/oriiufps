@@ -16,21 +16,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'InicioController@index')->name('inicio');
 
 //Eventos
-Route::get('evento','EventoController@index')->name('index.evento');
-Route::get('evento/show','EventoController@show')->name('show.evento');
+Route::get('eventos','EventoController@index')->name('index.evento');
+Route::get('evento/show/{idEvento}','EventoController@show')->name('show.evento');
 
 //Convenios
-Route::get('convenio','ConvenioController@index')->name('index.convenio');
+Route::get('convenios','ConvenioController@index')->name('index.convenio');
 
 //Convocatorias
-Route::get('convocatoria','ConvocatoriaController@index')->name('index.convocatoria');
+Route::get('convocatorias','ConvocatoriaController@index')->name('index.convocatoria');
 
 //Noticias
-Route::get('noticia','NoticiaController@index')->name('index.noticia');
-Route::get('noticia/show','NoticiaController@show')->name('show.noticia');
+Route::get('noticias','NoticiaController@index')->name('index.noticia');
+Route::get('noticia/show/{idNoticia}','NoticiaController@show')->name('show.noticia');
 
 //Experiencia
-Route::get('experiencia','ExperienciaController@index')->name('index.experiencia');
+Route::get('experiencias','ExperienciaController@index')->name('index.experiencia');
 
 //Presentacion
 Route::get('presentacion','PresentacionController@index')->name('index.presentacion');

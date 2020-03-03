@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Carbon\Carbon;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -24,6 +25,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        //FECHAS
+        Carbon::setlocale('es');
+        setlocale(LC_TIME,'es_ES.utf8');
+
         view()->share('theme', 'ufps');
     }
 }

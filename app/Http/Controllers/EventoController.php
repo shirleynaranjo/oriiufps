@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Evento;
+use App\Models\Noticia;
 use Illuminate\Http\Request;
 
 class EventoController extends Controller
@@ -13,8 +14,9 @@ class EventoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('evento.index');
+    {   $noticias = Noticia::latest('idNoticia')->take(3)->get();
+        $eventos = Evento::orderBy('idEvento','desc')->get();
+        return view('evento.index',compact('eventos','noticias'));  
     }
 
     /**
@@ -44,9 +46,11 @@ class EventoController extends Controller
      * @param  \App\Evento  $evento
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-        return view('evento.show');
+        $noticias = Noticia::latest('idNoticia')->take(3)->get();
+        $evento = Evento::findOrFail($id);        
+        return view('evento.show',compact('evento','noticias'));   
     }
 
     /**

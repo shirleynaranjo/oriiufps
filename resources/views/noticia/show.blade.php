@@ -6,7 +6,7 @@ Noticias
 @section('content')
 
 @section('titulo1')
-Noticia
+Noticias
 @endsection
 
 <div class="wrapper">
@@ -18,52 +18,44 @@ Noticia
 <!-- Inicio content-->
 <div class="container content profile">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-9 mb-margin-bottom-30 shadow-wrapper">
             <div class="row">
                 <div class="col-md-10">
                     <div class="headline">
-                        {{-- <h1 style="color:#555;">{{$noticia->tituloNoticia}}</h1> --}}
-                        <h1 style="color:#555;">Noticia</h1>
+                        <h1 style="color:#555;">{{$noticia->tituloNoticia}}</h1>
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="news-v3 bg-color-white col-md-6 col-sm-12 col-xs-12">
-                        <!-- video -->
                         <div class="margin-bottom-20">
                         </div>
 
-                        <!-- VIDEO-->
-                        <div class="news-v3 bg-color-white">
-                            <div class="responsive-video">
-                                <iframe src="https://www.youtube.com/embed/JPeM8a5oVNs" frameborder="0"
-                                    allowfullscreen></iframe>
-                            </div>
-                        </div>
+                        <img class="img-responsive" src="{{$noticia->imagen}}" alt="">
                     </div>
-                    <!-- End Imagen -->
+
                     <div class="text-right">
                         <em>
-                            {{-- <h6 style="color:#aa1916;">
-                                                <i class="fa fa-calendar"></i> Publicado el día
-                                                {{$noticia->fechaPublicacion}} / No. {{$noticia->idNoticia}} </h6> --}}
-
-                            <h6 style="color:#aa1916;">
-                                <i class="fa fa-calendar"></i> Publicado el día</h6>
+                            <h6 style="color:#aa1916;"><i class="fa fa-calendar"></i>
+                                Publicado el día
+                                {{$noticia->fechaPublicacion->isoFormat('dddd, DD [de] MMMM [del] YYYY')}}</h6>
                         </em>
                     </div>
 
-                    <div class="box-body">
-                        {{-- {{$noticia->descripcionNoticia}} --}}
-                        Noticia
+                    <div class="text-left">
+                        {{$noticia->descripcionNoticia}}
                     </div>
                 </div>
             </div>
         </div>
+        <div class="col-md-3">
+            <h4><b><a href="{{route('index.noticia')}}" >Buscar Noticias Anteriores <i class="fa fa-search search-btn"></i></a></b>
+            </h4>
+        </div> 
     </div>
-    {{-- <div class="wrapper">
+    <div class="wrapper">
         <!-- Inicio footer Noticia-->
-        @include("noticia/footerultimasnoticia")
+        @include("noticia/ultimasnoticias")
         <!-- Fin footer Noticias-->
-    </div> --}}
+    </div>
 </div>
 @endsection

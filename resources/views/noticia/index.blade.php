@@ -34,42 +34,29 @@ Noticias
                 <table id="table_noticia" class="table table-bordered table-striped">
                     <thead>
                         <tr>
+                            <th style="width: 20%">Imagen</th>
+                            <th style="width: 10%">Fecha</th>
                             <th>Titulo</th>
-                            <th>Fecha</th>
                         </tr>
                     </thead>
                     <tbody>
-
+                        @foreach ($noticias as $noticia)
                         <tr>
-                            <td>
-                                <a href="">
-                                        Noticia
-                                </a>                       
+                            <td><img class="img-responsive"
+                                src="{{$noticia->imagen}}"
+                                alt="">
                             </td>
-                            <td><i style="text-transform: none; color: #AA1916;">09/09</i></td>
-                        </tr>
-                       
-                        <tr>
+                            <td><i style="text-transform: none;color: #AA1916;">{{$noticia->fechaPublicacion->isoFormat('MM/DD/YYYY')}}</i></td>
                             <td>
-                                <a href="">
-                                        Noticia
-                                </a>                       
-                            </td>
-                            <td><i style="text-transform: none; color: #AA1916;">09/09</i></td>
+                                <h3><b>
+                                    <a href="{{route('show.noticia', ['idNoticia'=> $noticia->idNoticia])}}">
+                                        {{$noticia->tituloNoticia}}
+                                    </a>
+                                </b>  
+                                </h3>
+                            </td>                            
                         </tr>
-
-                        {{-- @foreach ($noticias as $noticia)
-                   <tr>
-                      <td>
-                         <h3>
-                         <a href="{{route('noticia_completa', ['idNoticia'=> $noticia->idNoticia])}}">
-                        {{$noticia->tituloNoticia}}
-                        </a>
-                        </h3>
-                        </td>
-                        <td><i style="text-transform: none; color: #AA1916;">{{$noticia->fechaPublicacion}}</i></td>
-                        </tr>
-                        @endforeach --}}
+                        @endforeach
                     </tbody>
                 </table>
             </div>

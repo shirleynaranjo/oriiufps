@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Noticia;
 use Illuminate\Http\Request;
 
 class NoticiaController extends Controller
@@ -13,7 +14,8 @@ class NoticiaController extends Controller
      */
     public function index()
     {
-        return view('noticia.index');
+        $noticias = Noticia::orderBy('idNoticia','desc')->get();
+        return view('noticia.index',compact('noticias'));        
     }
 
     /**
@@ -43,9 +45,11 @@ class NoticiaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-        return view('noticia.show');
+        $noticia = Noticia::findOrFail($id);
+        $noticias = Noticia::latest('idNoticia')->take(3)->get();
+        return view('noticia.show',compact('noticia','noticias'));        
     }
 
     /**
