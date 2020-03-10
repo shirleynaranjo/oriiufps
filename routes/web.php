@@ -33,10 +33,10 @@ Route::get('noticia/show/{idNoticia}','NoticiaController@show')->name('show.noti
 Route::get('experiencias','ExperienciaController@index')->name('index.experiencia');
 
 //Presentacion
-Route::get('presentacion','PresentacionController@index')->name('index.presentacion');
+Route::get('presentacion','PresentacionController@index')->defaults("idPresentacion", "1")->name('index.presentacion');
 
 //Vision
-Route::get('vision','VisionController@index')->name('index.vision');
+Route::get('vision','VisionController@index')->defaults("idPresentacion", "1")->name('index.vision');
 
 //Mision
 Route::get('mision','MisionController@index')->name('index.mision');

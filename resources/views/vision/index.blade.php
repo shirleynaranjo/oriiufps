@@ -30,13 +30,19 @@ Oficina de Relaciones Interinstitucionales e Internacionales
                 <div class="shadow-wrapper">
                     <blockquote class="tag-box tag-box-v4 margin-bottom-40">
                         <h5>
-                            <p><strong>Director:</strong> Nelson<br />
-
+                            <p>
+                                {{$item->vision}}
+                            </p>
                         </h5>
                     </blockquote>
                 </div>                
             </div>
         </div>
+    </div>
+    <div class="wrapper">
+        <!-- Inicio Header Noticia-->
+        @include("noticia/ultimasnoticias")
+        <!-- Fin Header Noticias-->
     </div>
 </div>
 @endsection

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Convocatoria;
+use App\Models\Noticia;
 use Illuminate\Http\Request;
 
 class ConvocatoriaController extends Controller
@@ -14,7 +15,9 @@ class ConvocatoriaController extends Controller
      */
     public function index()
     {
-        return view('convocatoria.index');
+        $noticias = Noticia::latest('idNoticia')->take(3)->get();
+        $convocatorias = Convocatoria::orderBy('idConvocatoria','desc')->get();
+        return view('convocatoria.index',compact('convocatorias','noticias'));  
     }
 
     /**
