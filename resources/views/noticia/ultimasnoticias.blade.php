@@ -18,7 +18,7 @@
                     <a href="{{route('show.noticia', ['idNoticia'=> $noticia->idNoticia])}}">{{$noticia->tituloNoticia}}</a>
                 </h3>
                 <ul class="blog-thumb-info">
-                    <li><i class="fa fa-calendar"></i>{{$noticia->fechaPublicacion->isoFormat('dddd, DD [de] MMMM [del] YYYY')}}</li>
+                    <li><i class="fa fa-calendar"></i> {{$noticia->fechaPublicacion->isoFormat('dddd, DD [de] MMMM [del] YYYY')}}</li>
                 </ul>
             </div>
         </div>

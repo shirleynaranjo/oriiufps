@@ -5,17 +5,17 @@
     </div>
     <ul class="nav nav-pills nav-stacked list-group sidebar-nav-v1" id="sidebar-nav">
         <li class="list-group-item" style="border:none; border-bottom: 1px solid #DDDEDF;">
-            <a href="" class="text-menu"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+            <a href="{{route("index.presentacion")}}" class="text-menu"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
                 Presentación
             </a>
         </li>
         <li class="list-group-item" style="border:none; border-bottom: 1px solid #DDDEDF;">
-            <a href="" class="text-menu"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+            <a href="{{route("index.mision")}}" class="text-menu"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
                 Misión
             </a>
         </li>
         <li class="list-group-item" style="border:none; border-bottom: 1px solid #DDDEDF;">
-            <a href="" class="text-menu"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+            <a href="{{route("index.vision")}}" class="text-menu"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
                 Visión
             </a>
         </li>

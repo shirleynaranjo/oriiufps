@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Noticia;
 use Illuminate\Http\Request;
 
 class ConvenioController extends Controller
@@ -13,7 +14,10 @@ class ConvenioController extends Controller
      */
     public function index()
     {
-        return view('convenio.index');
+        
+        $noticias = Noticia::latest('idNoticia')->take(3)->get();       
+        return view('convenio.index',compact('noticias')); 
+        
     }
 
     /**

@@ -39,9 +39,9 @@ Mapa de Convenios
     </div>
 
     <div class="wrapper">
-		<div class="row margin-top-60">
-			<!-- Inicio footer Noticia-->
-			{{-- @include("noticia/footerultimasnoticia") --}}
+        <!-- Inicio footer Noticia-->
+		<div class="row margin-top-40">			
+			@include("noticia/ultimasnoticias")
 		</div>
 		<!-- Fin footer Noticias-->
 	</div>

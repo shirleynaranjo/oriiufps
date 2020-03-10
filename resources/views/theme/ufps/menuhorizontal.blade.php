@@ -22,16 +22,16 @@
                     ORII
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="{{url("")}}">Presentación</a></li>
-                    <li><a href="{{url("")}}">Misión</a></li>
-                    <li><a href="{{url("")}}">Visión</a></li>
+                    <li><a href="{{route("index.presentacion")}}">Presentación</a></li>
+                    <li><a href="{{route("index.mision")}}">Misión</a></li>
+                    <li><a href="{{route("index.vision")}}">Visión</a></li>
                     <li><a href="{{url("")}}">Contacto</a></li>
                     
                 </ul>
             </li>
 
             <li class="dropdown">
-                <a href="{{url("")}}">
+                <a href="{{route("index.convenio")}}">
                     Convenios
                 </a>
             </li>
@@ -53,12 +53,12 @@
             </li>
 
             <li class="dropdown">
-                <a href="{{url("")}}">
+                <a href="{{route("index.convocatoria")}}">
                     Convocatorias
                 </a>
             </li>
             <li class="dropdown">
-                <a href="{{url("")}}">
+                <a href="{{route("index.experiencia")}}">
                     Experiencias
                 </a>
             </li>
