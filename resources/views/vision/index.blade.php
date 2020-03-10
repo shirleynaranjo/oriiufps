@@ -40,9 +40,9 @@ Oficina de Relaciones Interinstitucionales e Internacionales
         </div>
     </div>
     <div class="wrapper">
-        <!-- Inicio Header Noticia-->
+        <!-- Inicio footer Noticia-->
         @include("noticia/ultimasnoticias")
-        <!-- Fin Header Noticias-->
+        <!-- Fin footer Noticias-->
     </div>
 </div>
 @endsection

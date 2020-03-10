@@ -39,7 +39,7 @@ Route::get('presentacion','PresentacionController@index')->defaults("idPresentac
 Route::get('vision','VisionController@index')->defaults("idPresentacion", "1")->name('index.vision');
 
 //Mision
-Route::get('mision','MisionController@index')->name('index.mision');
+Route::get('mision','MisionController@index')->defaults("idPresentacion", "1")->name('index.mision');
 
 //Contacto
 Route::get('contacto','ContactoController@index')->name('index.contacto');

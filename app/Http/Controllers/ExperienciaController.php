@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Experencia;
+use App\Models\Noticia;
 use Illuminate\Http\Request;
 
 class ExperienciaController extends Controller
@@ -13,7 +15,9 @@ class ExperienciaController extends Controller
      */
     public function index()
     {
-        return view('experiencia.index');
+        $noticias = Noticia::latest('idNoticia')->take(3)->get();
+        $exps = Experencia::orderBy('idExperiencia','desc')->get();
+        return view('experiencia.index',compact('exps','noticias'));  
     }
 
     /**
