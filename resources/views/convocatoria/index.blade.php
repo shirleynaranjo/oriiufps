@@ -34,76 +34,31 @@ Convocatorias
                 <table id="table_noticia" class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th style="width: 20%">Convocatoria</th>
-                            <th style="width: 10%">Oferente</th>
-                            <th>Fecha de cierre</th>
-                            <th>Vigencia</th>
-                            <th>Información</th>
+                            <th>Convocatoria</th>
+                            <th>Oferente</th>
+                            <th style="width: 20%">Vigencia</th>
+                            <th style="width: 20%">Información</th>
                         </tr>
                     </thead>
-
-                    <tbody>
-                        <tr>
-                            <td>Becas Orii</td>
-                            <td>UFPS</td>
-                            <td><i style="text-transform: none; color: #AA1916;">08/07</i></td>
-                            <td>2019</td>
-                            <td><i style="text-transform: none; color: #AA1916;">Publicación</i></td>
-                        </tr>
-                        <tr>
-                            <td>Becas Orii</td>
-                            <td>UFPS</td>
-                            <td><i style="text-transform: none; color: #AA1916;">08/07</i></td>
-                            <td>2019</td>
-                            <td><i style="text-transform: none; color: #AA1916;">Publicación</i></td>
-                        </tr>
-                        <tr>
-                            <td>Becas Orii</td>
-                            <td>UFPS</td>
-                            <td><i style="text-transform: none; color: #AA1916;">08/07</i></td>
-                            <td>2019</td>
-                            <td><i style="text-transform: none; color: #AA1916;">Publicación</i></td>
-                        </tr>
-                        <tr>
-                            <td>Becas Orii</td>
-                            <td>UFPS</td>
-                            <td><i style="text-transform: none; color: #AA1916;">08/07</i></td>
-                            <td>2019</td>
-                            <td><i style="text-transform: none; color: #AA1916;">Publicación</i></td>
-                        </tr>
-                        <tr>
-                            <td>Becas Orii</td>
-                            <td>UFPS</td>
-                            <td><i style="text-transform: none; color: #AA1916;">08/07</i></td>
-                            <td>2019</td>
-                            <td><i style="text-transform: none; color: #AA1916;">Publicación</i></td>
-                        </tr>
-                        <tr>
-                            <td>Becas Orii</td>
-                            <td>UFPS</td>
-                            <td><i style="text-transform: none; color: #AA1916;">08/07</i></td>
-                            <td>2019</td>
-                            <td><i style="text-transform: none; color: #AA1916;">Publicación</i></td>
-                        </tr>                       
-                        {{-- @foreach ($convocatorias as $convocatoria)
+                    <tbody>                              
+                        @foreach ($convocatorias as $convocatoria)
                         <tr>
                             <td>{{$convocatoria->nombreConvocatoria}}</td>
-                            <td>{{$convocatoria->oferenteConvocatoria}}</td>
-                            <td><i style="text-transform: none; color: #AA1916;">{{$convocatoria->fechaCierre}}</i></td>
+                            <td>{{$convocatoria->oferenteConvocatoria}}</td>                            
                             <td>{{$convocatoria->vigenciaConvocatoria}}</td>
-                            <td><i style="text-transform: none; color: #AA1916;">{{$convocatoria->informacion}}</i></td>
+                            <td><a href="{{$convocatoria->informacionConvocatoria}}"><i style="text-transform: none; color: #AA1916;">Más información</i></td>
                         </tr>
-                        @endforeach --}}
+                        @endforeach
                     </tbody>
                 </table>
             </div>
 
         </div>
     </div>
-    {{-- <div class="wrapper">
+    <div class="wrapper">
         <!-- Inicio Header Noticia-->
-        @include("noticia/footerultimasnoticia")
+        @include("noticia/ultimasnoticias")
         <!-- Fin Header Noticias-->
-    </div> --}}
+    </div>
 </div>
 @endsection

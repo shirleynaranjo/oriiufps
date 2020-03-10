@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Noticia;
+use App\Models\Presentacion;
 use Illuminate\Http\Request;
 
 class VisionController extends Controller
@@ -11,9 +13,11 @@ class VisionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        return view('vision.index');
+        $noticias = Noticia::latest('idNoticia')->take(3)->get();
+        $item = Presentacion::findOrFail($id);
+        return view('vision.index',compact('item','noticias'));        
     }
 
     /**
