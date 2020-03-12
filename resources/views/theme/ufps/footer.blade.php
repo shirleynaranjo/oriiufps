@@ -4,18 +4,18 @@
     <ul class="social-icons social-icons-color margin-top-10">
         <li class="tooltips" data-toggle="tooltip" data-placement="bottom"
             data-original-title="Síguenos en Facebook"><a
-                href="https://www.facebook.com/"
+                href="https://www.facebook.com/ufpsorii"  target="_blank"
                 class="rounded social_facebook"></a>
         </li>
 
         <li class="tooltips" data-toggle="tooltip" data-placement="bottom"
-            data-original-title="Síguenos en Twitter"><a href="https://twitter.com"
+            data-original-title="Síguenos en Twitter"><a href="https://twitter.com/orii_ufps" target="_blank"
                 class="rounded social_twitter"></a>
         </li>
 
         <li class="tooltips" data-toggle="tooltip" data-placement="bottom"
             data-original-title="Síguenos en Instagram">
-            <a href="https://www.instagram.com/" class="rounded social_instagram"></a>
+            <a href="https://www.instagram.com/ufpsorii"  target="_blank" class="rounded social_instagram"></a>
         </li>
         
     </ul>
@@ -45,16 +45,16 @@
                         </div>
                         <ul class="list-unstyled latest-list">
                             <li>
-                                <a href="https://divisist2.ufps.edu.co/">Divisist</a>
+                                <a href="https://divisist2.ufps.edu.co/"  target="_blank">Divisist</a>
                             </li>
                             <li>
-                                <a href="http://dptosist.ufps.edu.co/piagev1/servlet/piagev">Piagev</a>
+                                <a href="http://dptosist.ufps.edu.co/piagev1/servlet/piagev"  target="_blank">Piagev</a>
                             </li>
                             <li>
-                                <a href="/universidad/atencion_ciudadano">PDQRS</a>
+                                <a href="/universidad/atencion_ciudadano"  target="_blank">PDQRS</a>
                             </li>
                             <li>
-                                <a href="http://ugad.ufps.edu.co:8084/datarsoft001/home.ufps">DatarSoft</a>
+                                <a href="http://ugad.ufps.edu.co:8084/datarsoft001/home.ufps"  target="_blank">DatarSoft</a>
                             </li>
                             <li>
                                 <a href="http://nomina.ufps.edu.co:9191/nominaufps">Sistema de Nómina</a>
@@ -73,10 +73,10 @@
                         <h2>Enlaces de Interés</h2>
                     </div>
                     <ul class="list-unstyled latest-list">
-                        <li><a href="https://www.cancilleria.gov.co/" style="text-transform: none;">Cancillería</a></li>
-                        <li><a href="http://www.migracioncolombia.gov.co/" style="text-transform: none;">Migración
+                        <li><a href="https://www.cancilleria.gov.co/" style="text-transform: none;  target="_blank"">Cancillería</a></li>
+                        <li><a href="http://www.migracioncolombia.gov.co/" style="text-transform: none;  target="_blank"">Migración
                                 Colombia</a></li>
-                        <li><a href="https://www.mineducacion.gov.co/portal/" style="text-transform: none;">Ministerio
+                        <li><a href="https://www.mineducacion.gov.co/portal/" style="text-transform: none;  target="_blank"">Ministerio
                                 de Educación</a></li>
                         <li><a href="https://portal.icetex.gov.co/Portal/" style="text-transform: none;">Icetex</a></li>
                         <li><a href="https://www.colombia.co/" style="text-transform: none;">Colombia.CO</a></li>

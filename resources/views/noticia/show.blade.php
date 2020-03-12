@@ -52,10 +52,10 @@ Noticias
             </h4>
         </div> 
     </div>
-    <div class="wrapper">
+    {{-- <div class="wrapper">
         <!-- Inicio footer Noticia-->
         @include("noticia/ultimasnoticias")
         <!-- Fin footer Noticias-->
-    </div>
+    </div> --}}
 </div>
 @endsection

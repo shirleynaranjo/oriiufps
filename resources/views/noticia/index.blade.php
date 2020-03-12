@@ -49,7 +49,7 @@ Noticias
                             <td><i style="text-transform: none;color: #AA1916;">{{$noticia->fechaPublicacion->isoFormat('MM/DD/YYYY')}}</i></td>
                             <td>
                                 <h3><b>
-                                    <a href="{{route('show.noticia', ['idNoticia'=> $noticia->idNoticia])}}">
+                                    <a href="/noticia/show/{{$noticia->idNoticia}}">
                                         {{$noticia->tituloNoticia}}
                                     </a>
                                 </b>  
