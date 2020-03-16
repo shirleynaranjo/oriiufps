@@ -48,14 +48,14 @@ Noticias
             </div>
         </div>
         <div class="col-md-3">
-            <h4><b><a href="{{route('index.noticia')}}" >Buscar Noticias Anteriores <i class="fa fa-search search-btn"></i></a></b>
+            <h4><b><a href="/noticias" >Buscar Noticias Anteriores <i class="fa fa-search search-btn"></i></a></b>
             </h4>
         </div> 
     </div>
-    {{-- <div class="wrapper">
+    <div class="wrapper">
         <!-- Inicio footer Noticia-->
         @include("noticia/ultimasnoticias")
         <!-- Fin footer Noticias-->
-    </div> --}}
+    </div>
 </div>
 @endsection
