@@ -5,6 +5,7 @@ namespace App\Providers;
 use Carbon\Carbon;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\ServiceProvider;
+use GuzzleHttp\Client;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -15,7 +16,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $baseUrl = env('DESERT_EBS_BASE_URL');
+
+        $this->app->singleton('GuzzleHttp\Client', function() use ($baseUrl) {
+            return new Client([
+                'base_uri' => $baseUrl,
+            ]);
+        });
     }
 
     /**

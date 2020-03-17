@@ -50,6 +50,7 @@
         <link type="text/css" rel="stylesheet" href="{{asset("assets/$theme/css/custom-hover-effects.min.css")}}">
         <link type="text/css" rel="stylesheet" href="{{asset("assets/$theme/css/custom.min.css")}}">
         <link type="text/css" rel="stylesheet" href="{{asset("assets/$theme/css/pgwslider.min.css")}}">
+        <link rel="stylesheet" href="{{asset("assets/$theme/style/noticia.css")}}"
         <section class="style">
             @yield('style')
         </section>

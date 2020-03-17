@@ -48,7 +48,7 @@ Noticias
             </div>
         </div>
         <div class="col-md-3">
-            <h4><b><a href="{{route('index.noticia')}}" >Buscar Noticias Anteriores <i class="fa fa-search search-btn"></i></a></b>
+            <h4><b><a href="/noticias" >Buscar Noticias Anteriores <i class="fa fa-search search-btn"></i></a></b>
             </h4>
         </div> 
     </div>

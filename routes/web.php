@@ -27,7 +27,8 @@ Route::get('convocatorias','ConvocatoriaController@index')->name('index.convocat
 
 //Noticias
 Route::get('noticias','NoticiaController@index')->name('index.noticia');
-Route::get('noticia/show/{idNoticia}','NoticiaController@show')->name('show.noticia');
+// Route::get('noticia/show/{idNoticia}','NoticiaController@show')->name('show.noticia');
+Route::get('noticia/show/{slug}','NoticiaController@show')->name('show.noticia');
 
 //Experiencia
 Route::get('experiencias','ExperienciaController@index')->name('index.experiencia');

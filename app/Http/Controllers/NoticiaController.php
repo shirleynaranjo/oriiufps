@@ -3,10 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Noticia;
+use App\Repositories\Noticias;
 use Illuminate\Http\Request;
 
 class NoticiaController extends Controller
 {
+    protected $noticias;
+
+    public function __construct(Noticia $noticias)
+    {
+        $this->noticias = $noticias;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,8 +22,11 @@ class NoticiaController extends Controller
      */
     public function index()
     {
-        $noticias = Noticia::orderBy('idNoticia','desc')->get();
-        return view('noticia.index',compact('noticias'));        
+        // $noticias = Noticia::orderBy('idNoticia','desc')->get();
+        // return view('noticia.index',compact('noticias')); 
+        $noticias = $this->noticias->all();
+        return view('noticia.index',compact('noticias'));
+
     }
 
     /**
@@ -45,11 +56,16 @@ class NoticiaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        $noticia = Noticia::findOrFail($id);
+        $noticia = Noticia::where('slug','=', $slug)->firstOrFail();
         $noticias = Noticia::latest('idNoticia')->take(3)->get();
-        return view('noticia.show',compact('noticia','noticias'));        
+        // return view('noticia.show',compact('noticia','noticias'));
+        // $noticias = $this->noticias->all()->take(3);
+        // $noticia = $this->noticias->find($id);
+        return view('noticia.show',compact('noticia','noticias'));  
+        
+        
     }
 
     /**

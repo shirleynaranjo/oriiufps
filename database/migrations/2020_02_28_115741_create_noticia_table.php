@@ -18,8 +18,10 @@ class CreateNoticiaTable extends Migration
             $table->string('tituloNoticia',500);     
             $table->date('fechaPublicacion',500);       
             $table->string('descripcionNoticia',5000);             
-            $table->string('imagen',200)->nullable();   
-            $table->string('video',200)->nullable();        
+            $table->string('imagen',200)->nullable();
+            $table->string('imagenInicio',200)->nullable();  
+            $table->string('video',200)->nullable();   
+            $table->string('slug')->unique();     
             $table->timestamps();
             $table->charset='utf8mb4';
             $table->collation='utf8mb4_spanish2_ci';
