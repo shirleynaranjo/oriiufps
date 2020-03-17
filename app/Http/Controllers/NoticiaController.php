@@ -56,13 +56,13 @@ class NoticiaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        // $noticia = Noticia::findOrFail($id);
-        // $noticias = Noticia::latest('idNoticia')->take(3)->get();
+        $noticia = Noticia::where('slug','=', $slug)->firstOrFail();
+        $noticias = Noticia::latest('idNoticia')->take(3)->get();
         // return view('noticia.show',compact('noticia','noticias'));
-        $noticias = $this->noticias->all()->take(3);
-        $noticia = $this->noticias->find($id);
+        // $noticias = $this->noticias->all()->take(3);
+        // $noticia = $this->noticias->find($id);
         return view('noticia.show',compact('noticia','noticias'));  
         
         

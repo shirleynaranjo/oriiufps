@@ -5,7 +5,7 @@
             @foreach ($noticias as $noticia)                
             
             <li>
-                <a href="/noticia/show/{{$noticia->idNoticia}}"><img
+                <a href="/noticia/show/{{$noticia->slug}}"><img
                         src="{{$noticia->imagenInicio}}"
                         alt="{{$noticia->tituloNoticia}}"><span
                         style="font-family: inherit; font-weight: bold;">{{$noticia->tituloNoticia}}</span></a>
