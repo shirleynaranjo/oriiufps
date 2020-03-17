@@ -60,9 +60,10 @@ class NoticiaController extends Controller
     {
         // $noticia = Noticia::findOrFail($id);
         // $noticias = Noticia::latest('idNoticia')->take(3)->get();
-        // return view('noticia.show',compact('noticia','noticias'));          
+        // return view('noticia.show',compact('noticia','noticias'));
+        $noticias = $this->noticias->all()->take(3);
         $noticia = $this->noticias->find($id);
-        return view('noticia.show',compact('noticia'));  
+        return view('noticia.show',compact('noticia','noticias'));  
         
         
     }

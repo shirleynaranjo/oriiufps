@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Evento;
+use App\Models\Noticia;
 use Illuminate\Http\Request;
 
 class InicioController extends Controller
@@ -11,9 +13,23 @@ class InicioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    protected $noticias;
+    protected $eventos;
+
+    public function __construct(Noticia $noticias, Evento $eventos)
+    {
+        $this->noticias = $noticias;
+        $this->eventos = $eventos;
+    
+    }
+    
     public function index()
     {
-        return view('inicio');
+        // $noticias = $this->noticias->all()->take(4); 
+        // $eventos = $this->eventos->all();      
+        $noticias = Noticia::latest('idNoticia')->take(4)->get();    
+        $eventos = Evento::latest('idEvento')->get();          
+        return view('inicio',compact('noticias','eventos'));          
     }
 
     /**
