@@ -19,8 +19,8 @@ class CreatePresentacionTable extends Migration
             $table->string('correo',100);
             $table->string('textoPresentacion',500);
             $table->string('contacto',500);
-            $table->string('mision',5000);
-            $table->string('vision',5000);
+            $table->string('mision',5000)->nullable();;
+            $table->string('vision',5000)->nullable();;
             $table->string('fotoDirector',200)->nullable();
             $table->timestamps();
             $table->charset='utf8mb4';

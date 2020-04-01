@@ -19,7 +19,7 @@ class CreateConvocatoriaTable extends Migration
             $table->string('oferenteConvocatoria',200);            
             $table->string('vigenciaConvocatoria',200);
             $table->string('informacionConvocatoria',200)->nullable();
-            $table->string('estadoConvocatoria',100)->nullable();
+            $table->string('estadoConvocatoria',100);
             $table->timestamps();
             $table->charset='utf8mb4';
             $table->collation='utf8mb4_spanish2_ci';
