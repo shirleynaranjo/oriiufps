@@ -19,7 +19,7 @@
                                         {{$evento->fechaEvento}} </div>
                                     <em class="overflow-hidden">
                                         <img class="img-responsive"
-                                    src="{{$evento->imagenMiniatura}}"
+                                    src="{{Storage::url("imagenes/eventos/miniaturas/$evento->imagenMiniatura")}}"
                                             alt="Imagen de eventos">
                                     </em>
                                     <span>

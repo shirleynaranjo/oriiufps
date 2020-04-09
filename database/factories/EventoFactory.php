@@ -13,7 +13,9 @@ $factory->define(Evento::class, function (Faker $faker) {
         'fechaEvento' => $faker->date($format = 'Y-m-d'),
         'horaEvento' => $faker->time($format = 'H:i'),
         'descripcionEvento' => $faker->text($maxNbChars = 200),
-        'informacionEvento' => $faker->imageUrl($width = 640, $height = 480),
+        'imagen' => $faker->imageUrl($width = 640, $height = 480),
+        'archivoPDF'=>$faker->sentence($nbWords = 0),
+        'estadoEvento'=>$faker->boolean(),
         'imagenMiniatura' => $faker->imageUrl($width = 262, $height = 100),
 
     ];

@@ -43,7 +43,7 @@ Eventos
                     <tbody>
                         @foreach ($eventos as $evento)
                         <tr>
-                            <td><img class="img-responsive" src="{{$evento->imagenMiniatura}}" alt="">
+                            <td><img class="img-responsive" src="{{Storage::url("imagenes/eventos/miniaturas/$evento->imagenMiniatura")}}" alt="">
                             </td>
                             <td>
                                 <h3>
