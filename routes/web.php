@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 
 //Inicio
 Route::get('/', 'InicioController@index')->name('inicio');
+Route::get('/form', 'InicioController@create');
 
 //Eventos
 Route::get('eventos','EventoController@index')->name('index.evento');
@@ -49,3 +50,24 @@ Route::get('contacto','ContactoController@index')->name('index.contacto');
 Route::get('movilidad/docente','MovilidadController@indexDocente')->name('index.movilidadD');
 Route::get('movilidad/estudiante','MovilidadController@indexEstudiante')->name('index.movilidadE');
 Route::get('movilidad/comunidad_extranjera','MovilidadController@indexExtranjera')->name('index.movilidadEx');
+
+//Formularios
+    //Eventos
+Route::get('evento','FormulariosController@indexEventos')->name('evento');
+Route::get('evento/crear','FormulariosController@createEvento')->name('crear_evento');
+Route::post('evento','FormulariosController@storeEvento')->name('guardar_evento');
+Route::get('evento/{id}/editar','FormulariosController@editEvento')->name('editar_evento');
+Route::put('evento/{id}','FormulariosController@updateEvento')->name('actualizar_evento');
+Route::delete('evento/{id}','FormulariosController@destroyEvento')->name('eliminar_evento');
+    //Noticias
+Route::get('noticia','FormulariosController@indexNoticias')->name('noticia');
+//Noticias
+Route::get('convocatoria','FormulariosController@indexConvocatorias')->name('convocatoria');
+//Noticias
+Route::get('experiencia','FormulariosController@indexExperiencias')->name('experiencia');
+//Noticias
+Route::get('presentacion','FormulariosController@indexPresentacion')->name('presentacion');
+//Noticias
+Route::get('contacto','FormulariosController@indexContacto')->name('contacto');
+//Noticias
+Route::get('movilidad','FormulariosController@indexMovilidad')->name('movilidad');
