@@ -53,6 +53,7 @@ class ValidacionEvento extends FormRequest
         return [
             'imagenMin.max' => 'La imagen no puede tener un peso mayor a 1MB.',
             'imagenMin.mimes' => 'El campo imagen portada debe ser un archivo de tipo: jpeg, jpg, png.',
+            'imagenMin.Ev' => 'El campo imagen debe ser un archivo de tipo: jpeg, jpg, png.',
             'imagenEv.max' => 'La imagen no puede tener un peso mayor a 1MB.',
             'archivo.max' =>  'El archivo pdf no puede tener un peso mayor a 2MB.',
         ];

@@ -37,7 +37,8 @@ Eventos
                         <label for="imagen" class="col-lg-3 control-label">Imagen portada</label>
 
                         <div class="col-lg-5">
-                            <input type="file" name="imagenMin" id="imagenMiniatura" data-initial-preview="{{isset($data->imagen) ? $data->imagen : ""}}" accept="image/*" >
+                            <input type="file" name="imagenMin" id="imagenMiniatura"
+                                data-initial-preview="{{isset($data->imagen) ? $data->imagen : ""}}" accept="image/*">
                         </div>
                     </div>
 
@@ -65,8 +66,13 @@ Eventos
                         <label for="fechaEvento" class="col-lg-3 control-label requerido">Fecha</label>
 
                         <div class="col-lg-8">
-                            <input type="text" name="fechaEvento" id="fechaEvento" class="form-control"
-                                value="{{old('fechaEvento',$data->fechaEvento ?? '')}}" required>
+                            <div class="input-group date">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input type="text" name="fechaEvento" id="fechaEvento" class="form-control"
+                                    value="{{old('fechaEvento',$data->fechaEvento ?? '')}}" required>
+                            </div>
                         </div>
                     </div>
 
@@ -118,7 +124,7 @@ Eventos
                         <div class="col-lg-8">
                             <input type="file" accept="application/pdf" name="archivo" id="archivoPDF">
                         </div>
-                    </div>      
+                    </div>
                 </div>
                 <div class="box-footer">
                     <div class="col-lg-3"></div>

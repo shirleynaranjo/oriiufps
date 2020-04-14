@@ -33,7 +33,7 @@ Eventos
                 <div class="box.body">
 
                     <label class="col-lg-12 coment">Carátula del evento en la página de inicio </label>
-                    
+
                     <div class="form-group">
                         <label for="imagen" class="col-lg-3 control-label requerido">Imagen portada</label>
 
@@ -48,8 +48,8 @@ Eventos
                         <label for="tituloEvento" class="col-lg-3 control-label requerido">Titulo</label>
 
                         <div class="col-lg-8">
-                            <input type="text" name="tituloEvento" id="tituloEvento" class="form-control" value="{{old('tituloEvento')}}"
-                                required>
+                            <input type="text" name="tituloEvento" id="tituloEvento" class="form-control"
+                                value="{{old('tituloEvento')}}" required>
                         </div>
                     </div>
 
@@ -57,7 +57,8 @@ Eventos
                         <label for="lugarEvento" class="col-lg-3 control-label requerido">Lugar</label>
 
                         <div class="col-lg-8">
-                            <input type="text" name="lugarEvento" id="lugarEvento" class="form-control" value="{{old('lugarEvento')}}" required>
+                            <input type="text" name="lugarEvento" id="lugarEvento" class="form-control"
+                                value="{{old('lugarEvento')}}" required>
                         </div>
                     </div>
 
@@ -65,8 +66,13 @@ Eventos
                         <label for="fechaEvento" class="col-lg-3 control-label requerido">Fecha</label>
 
                         <div class="col-lg-8">
-                            <input type="text" name="fechaEvento" id="fechaEvento" class="form-control" value="{{old('fechaEvento')}}"
-                                required>
+                            <div class="input-group date">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input type="text" name="fechaEvento" id="fechaEvento" class="form-control"
+                                    value="{{old('fechaEvento')}}" required>
+                            </div>
                         </div>
                     </div>
 
@@ -74,7 +80,13 @@ Eventos
                         <label for="horaEvento" class="col-lg-3 control-label requerido">Hora</label>
 
                         <div class="col-lg-8">
-                            <input type="text" name="horaEvento" id="horaEvento" class="form-control" value="{{old('horaEvento')}}" required>
+                            <div class="input-group date">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-clock-o"></i>
+                                </div>
+                                <input type="text" name="horaEvento" id="horaEvento" class="form-control"
+                                    value="{{old('horaEvento')}}" required>
+                            </div>
                         </div>
                     </div>
 
@@ -82,7 +94,8 @@ Eventos
                         <label for="descripcionEvento" class="col-lg-3 control-label">Descripción</label>
 
                         <div class="col-lg-8">
-                            <textarea id="editor1" name="descripcionEvento" rows="10" cols="80">{{old('descripcionEvento')}}</textarea>
+                            <textarea id="editor1" name="descripcionEvento" rows="10"
+                                cols="80">{{old('descripcionEvento')}}</textarea>
                         </div>
                     </div>
 
@@ -112,7 +125,7 @@ Eventos
                         <div class="col-lg-8">
                             <input type="file" accept="application/pdf" name="archivo" id="archivoPDF">
                         </div>
-                    </div>                    
+                    </div>
                 </div>
                 <div class="box-footer">
                     <div class="col-lg-3"></div>

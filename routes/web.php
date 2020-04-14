@@ -61,13 +61,18 @@ Route::put('evento/{id}','FormulariosController@updateEvento')->name('actualizar
 Route::delete('evento/{id}','FormulariosController@destroyEvento')->name('eliminar_evento');
     //Noticias
 Route::get('noticia','FormulariosController@indexNoticias')->name('noticia');
-//Noticias
+Route::get('noticia/crear','FormulariosController@createNoticia')->name('crear_noticia');
+Route::post('noticia','FormulariosController@storeNoticia')->name('guardar_noticia');
+Route::get('noticia/{slug}/editar','FormulariosController@editNoticia')->name('editar_noticia');
+Route::put('noticia/{slug}','FormulariosController@updateNoticia')->name('actualizar_noticia');
+Route::delete('noticia/{slug}','FormulariosController@destroyNoticia')->name('eliminar_noticia');
+    //Convocatorias
 Route::get('convocatoria','FormulariosController@indexConvocatorias')->name('convocatoria');
-//Noticias
+//Experiencias
 Route::get('experiencia','FormulariosController@indexExperiencias')->name('experiencia');
-//Noticias
-Route::get('presentacion','FormulariosController@indexPresentacion')->name('presentacion');
-//Noticias
+//Presentacion
+Route::get('presentacion/index','FormulariosController@indexPresentacion')->name('presentacion');
+//Contacto
 Route::get('contacto','FormulariosController@indexContacto')->name('contacto');
-//Noticias
+//Movilidad
 Route::get('movilidad','FormulariosController@indexMovilidad')->name('movilidad');
