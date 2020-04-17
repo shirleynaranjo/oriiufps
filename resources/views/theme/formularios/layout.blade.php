@@ -20,6 +20,8 @@
         <link rel="stylesheet" href="{{asset("assets/lte/dist/css/skins/_all-skins.min.css")}}">
         <!-- PROPIOS -->
         <link rel="stylesheet" href="{{asset("assets/formularios/css/custom.css")}}">
+        <!--Datatable-->
+        <link rel="stylesheet" href="{{asset("assets/lte/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css")}}">      
         
         <!-- Google Font -->
         <link rel="stylesheet"
@@ -81,6 +83,10 @@
         <script src="{{asset("assets/lte/dist/js/adminlte.min.js")}}"></script>
         <!--PROPIOS -->
         <script src="{{asset("assets/formularios/js/scripts.js")}}"></script>
+        <!--Datatable-->
+        <script src="{{asset("assets/lte/bower_components/datatables.net/js/jquery.dataTables.min.js")}}"></script>
+        <script src="{{asset("assets/lte/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js")}}"></script>
+        <script src="{{asset("assets/formularios/js/main.min.js")}}"></script>
         @yield('scripts')
         
     </body>

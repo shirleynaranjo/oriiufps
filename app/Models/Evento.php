@@ -28,6 +28,7 @@ class Evento extends Model
             $imageName = Str::random(20) . '.jpg';
             $image = Image::make($imagen)->encode('jpg', 80);
             $image->resize(262, 100, function ($constraint) {
+                $constraint->aspectRatio();
                 $constraint->upsize();
             });
             Storage::disk('public')->put("imagenes/eventos/miniaturas/$imageName", $image->stream());
@@ -46,6 +47,7 @@ class Evento extends Model
             $imageName = Str::random(20) . '.jpg';
             $image = Image::make($imagen)->encode('jpg', 80);
             $image->resize(720, function ($constraint) {
+                $constraint->aspectRatio();
                 $constraint->upsize();
             });
             Storage::disk('public')->put("imagenes/eventos/$imageName", $image->stream());

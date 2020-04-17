@@ -27,7 +27,7 @@ class ValidacionNoticia extends FormRequest
             return [
                 'imagenPortada' => 'nullable|max:1024|mimes:jpeg,jpg,png',
                 'tituloNoticia' => 'required|max:500',
-                'fechaPublicacion' => 'required|max:500',
+                'fechaPublicacion' => 'required|date_format:d/m/Y|max:500',
                 'descripcionNoticia' => 'required|max:5000',                
                 'imagenNoti' => 'nullable|image|max:1024|mimes:jpeg,jpg,png',
                 'video' => 'nullable|max:200',
@@ -36,7 +36,7 @@ class ValidacionNoticia extends FormRequest
             return [
                 'imagenPortada' => 'required|max:1024|mimes:jpeg,jpg,png',
                 'tituloNoticia' => 'required|max:500',
-                'fechaPublicacion' => 'required|max:500',
+                'fechaPublicacion' => 'required|date_format:d/m/Y|max:500',
                 'descripcionNoticia' => 'required|max:5000',                
                 'imagenNoti' => 'nullable|image|max:1024|mimes:jpeg,jpg,png',
                 'video' => 'nullable|max:200',

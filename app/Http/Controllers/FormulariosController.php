@@ -173,8 +173,12 @@ class FormulariosController extends Controller
      * @return void
      */     
     public function updateNoticia(ValidacionNoticia $request, $slug)
-    {
+    {             
         $noticia = Noticia::where('slug','=', $slug)->firstOrFail();
+
+        $fecha = Carbon::createFromFormat('d/m/Y',$request->fechaPublicacion);   
+        $request->request->add(['fechaPublicacion'=>$fecha]);
+
         if ($imagen1 = Noticia::setImagenInicio($request->imagenPortada, $noticia->imagenInicio))
             $request->request->add(['imagenInicio' => $imagen1]);
 
@@ -182,10 +186,7 @@ class FormulariosController extends Controller
             $request->request->add(['imagen' => $imagen2]);
 
         $slug = Str::slug($request->tituloNoticia,'-');
-        $request->request->add(['slug' => $slug]);
-
-        $fecha = Carbon::createFromFormat('d/m/Y',$request->fechaPublicacion);   
-        $request->request->add(['fechaPublicacion'=>$fecha]);    
+        $request->request->add(['slug' => $slug]);           
 
         $noticia->update($request->all());
         return redirect('noticia')->with('mensaje', 'Noticia actualizada exitosamente');

@@ -16,4 +16,14 @@ $(document).ready(function () {
         html: true,
         container: 'body'
     });
+
+    $('#table_noticias').DataTable( {
+        "lengthMenu": [[5,10, 25, 50, -1], [5,10, 25, 50, "All"]],
+        ordering: false,
+        language: {
+            url: "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
+        }     
+    } );
+
+
 });

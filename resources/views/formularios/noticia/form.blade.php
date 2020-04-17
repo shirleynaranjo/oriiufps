@@ -37,7 +37,7 @@
             </div>
             @if(isset($data->fechaPublicacion))
                 <input type="text" name="fechaPublicacion" id="datepicker" class="form-control pull-right"
-                value="{{old('fechaPublicacion', $data->fechaPublicacion->isoFormat('MM/DD/YYYY') ?? '')}}" required>
+                value="{{old('fechaPublicacion', $data->fechaPublicacion->isoFormat('DD/MM/YYYY') ?? '')}}" required>
             @else
             <input type="text" name="fechaPublicacion" id="datepicker" class="form-control pull-right"
                 value="{{old('fechaPublicacion')}}" required>

@@ -18,7 +18,7 @@ Lista noticias
                 </div>
             </div>
             <div class="box-body">
-                <table class="table table-striped table-bordered table-hover">
+                <table id="table_noticias" class="table table-bordered table-striped"">
                     <thead>
                         <tr>
                             <th>Portada</th>
@@ -34,7 +34,7 @@ Lista noticias
                             <td><img class="img-responsive"
                                     src="{{Storage::url("imagenes/noticias/$data->imagenInicio")}}" alt=""></td>
                             <td>{{$data->tituloNoticia}}</td>
-                            <td>{{$data->fechaPublicacion->isoFormat('MM/DD/YYYY')}}</td>
+                            <td>{{$data->fechaPublicacion->isoFormat('DD/MM/YYYY')}}</td>
                             <td>{!!$data->descripcionNoticia!!}</td>
                             <td>
                                 <a href="{{route('editar_noticia' , [$data->slug])}}" class="btn-accion-tabla tooltipsC"

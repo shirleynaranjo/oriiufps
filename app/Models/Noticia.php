@@ -24,6 +24,7 @@ class Noticia extends Model
             $imageName = Str::random(20) . '.jpg';
             $image = Image::make($imagen)->encode('jpg', 80);
             $image->resize(1900, 550, function ($constraint) {
+                $constraint->aspectRatio();
                 $constraint->upsize();
             });
             Storage::disk('public')->put("imagenes/noticias/$imageName", $image->stream());
@@ -42,6 +43,7 @@ class Noticia extends Model
             $imageName = Str::random(20) . '.jpg';
             $image = Image::make($imagen)->encode('jpg', 80);
             $image->resize(400, 280, function ($constraint) {
+                $constraint->aspectRatio();
                 $constraint->upsize();
             });
             Storage::disk('public')->put("imagenes/noticias/$imageName", $image->stream());
