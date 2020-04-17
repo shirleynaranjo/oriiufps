@@ -24,7 +24,7 @@ class NoticiaController extends Controller
     {
         // $noticias = Noticia::orderBy('idNoticia','desc')->get();
         // return view('noticia.index',compact('noticias')); 
-        $noticias = $this->noticias->all();
+        $noticias = $this->noticias->orderBy('idNoticia', 'desc')->get();
         return view('noticia.index',compact('noticias'));
 
     }

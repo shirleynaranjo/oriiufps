@@ -9,7 +9,7 @@
         <div class="blog-thumb blog-thumb-circle margin-bottom-15">
             <div class="blog-thumb-hover">
                 <img id="imagen" class="img-responsive"
-                    src="{{$noticia->imagen}}" alt="">
+                    src="{{isset($noticia->imagen) ? Storage::url("imagenes/noticias/$noticia->imagen") : "http://www.placehold.it/80x56/EFEFEF/AAAAAA&text=UFPS"}}" alt="">
                 <a class="hover-grad" href="/noticia/show/{{$noticia->slug}}">
                     <i class="fa fa-link"></i>
                 </a>
