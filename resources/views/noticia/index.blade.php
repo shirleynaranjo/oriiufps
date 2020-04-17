@@ -12,7 +12,7 @@ Noticias
 @section('style')
 <link rel="stylesheet" href="{{asset("assets/$theme/plugins/datatables/css/dataTables.bootstrap.min.css")}}">
 <link rel="stylesheet" href="{{asset("assets/$theme/style/datatables.css")}}">
-<link rel="stylesheet" href="{{asset("assets/$theme/style/noticia.css")}}"
+<link rel="stylesheet" href="{{asset("assets/$theme/style/noticia.css")}}">
 @endsection
 
 @section('scripts')
@@ -44,10 +44,10 @@ Noticias
                         @foreach ($noticias as $noticia)
                         <tr>
                             <td><img id="imagen-list" class="img-responsive"
-                                src="{{$noticia->imagen}}"
+                                src="{{Storage::url("imagenes/noticias/$noticia->imagenInicio")}}"
                                 alt="">
                             </td>
-                            <td><i style="text-transform: none;color: #AA1916;">{{$noticia->fechaPublicacion->isoFormat('MM/DD/YYYY')}}</i></td>
+                            <td><i style="text-transform: none;color: #AA1916;">{{$noticia->fechaPublicacion->isoFormat('DD/MM/YYYY')}}</i></td>
                             <td>
                                 <h3><b>
                                     <a href="/noticia/show/{{$noticia->slug}}">

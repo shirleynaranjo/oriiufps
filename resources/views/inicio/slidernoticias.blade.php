@@ -6,7 +6,7 @@
             
             <li>
                 <a href="/noticia/show/{{$noticia->slug}}"><img
-                        src="{{$noticia->imagenInicio}}"
+                        src="{{Storage::url("imagenes/noticias/$noticia->imagenInicio")}}"
                         alt="{{$noticia->tituloNoticia}}"><span
                         style="font-family: inherit; font-weight: bold;">{{$noticia->tituloNoticia}}</span></a>
             </li>
