@@ -68,6 +68,11 @@ Route::put('noticia/{slug}','FormulariosController@updateNoticia')->name('actual
 Route::delete('noticia/{slug}','FormulariosController@destroyNoticia')->name('eliminar_noticia');
     //Convocatorias
 Route::get('convocatoria','FormulariosController@indexConvocatorias')->name('convocatoria');
+Route::get('convocatoria/crear','FormulariosController@createConvocatoria')->name('crear_convocatoria');
+Route::post('convocatoria','FormulariosController@storeConvocatoria')->name('guardar_convocatoria');
+Route::get('convocatoria/{id}/editar','FormulariosController@editConvocatoria')->name('editar_convocatoria');
+Route::put('convocatoria/{id}','FormulariosController@updateConvocatoria')->name('actualizar_convocatoria');
+Route::delete('convocatoria/{id}','FormulariosController@destroyConvocatoria')->name('eliminar_convocatoria');
 //Experiencias
 Route::get('experiencia','FormulariosController@indexExperiencias')->name('experiencia');
 //Presentacion

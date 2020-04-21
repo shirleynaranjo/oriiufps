@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ValidacionConvocatoria;
 use App\Http\Requests\ValidacionEvento;
 use App\Http\Requests\ValidacionNoticia;
+use App\Models\Convocatoria;
 use App\Models\Evento;
 use App\Models\Noticia;
 use Carbon\Carbon;
@@ -209,5 +211,88 @@ class FormulariosController extends Controller
         }        
         return redirect('noticia')->with('mensaje', 'Noticia eliminada exitosamente');
     }
+
+      /**
+     * Undocumented function
+     *
+     * @return view noticia.index
+     */
+    public function indexConvocatorias()
+    {
+        $convocatorias = Convocatoria::orderBy('idConvocatoria', 'desc')->get();
+        return view('formularios.convocatoria.index', compact('convocatorias'));
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @return view noticia.create
+     */
+    public function createConvocatoria()
+    {
+        return view('formularios.convocatoria.create', compact('data'));
+    }
+
+    /**
+     * Undocumented function
+     *  
+     * @param Request $request 
+     * @return void
+     */
+    public function storeConvocatoria(ValidacionConvocatoria $request)
+    {
+
+        if ($archivo1 = Convocatoria::setArchivo($request->infoConvocatoria))
+        $request->request->add(['informacionConvocatoria' => $archivo1]);
+
+        Convocatoria::create($request->all());
+        return redirect('convocatoria')->with('mensaje', 'Convocatoria creada exitosamente');
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @param [type] $id
+     * @return void
+     */
+    public function editConvocatoria($id)
+    {              
+        $data = Convocatoria::findOrFail($id);
+        return view('formularios.convocatoria.edit', compact('data'));
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @param ValidacionConvocatoria $request
+     * @param [type] $id
+     * @return void
+     */     
+    public function updateConvocatoria(ValidacionConvocatoria $request, $id)
+    {             
+        $convocatoria = Convocatoria::findOrFail($id);
+
+        if ($archivo1 = Convocatoria::setArchivo($request->infoConvocatoria, $convocatoria->informacionConvocatoria))
+        $request->request->add(['informacionConvocatoria' => $archivo1]);
+
+        $convocatoria->update($request->all());
+        return redirect('convocatoria')->with('mensaje', 'Convocatoria actualizada exitosamente');
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @param Request $request
+     * @param [type] $id
+     * @return void
+     */
+    public function destroyConvocatoria(Request $request, $id)
+    {
+        Convocatoria::destroy($id);
+        return redirect('convocatoria')->with('mensaje', 'Convocatoria eliminada exitosamente');   
+        
+    }
+
+
 
 }
