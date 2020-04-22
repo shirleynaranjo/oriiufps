@@ -37,6 +37,7 @@ Convocatorias
                             <th>Convocatoria</th>
                             <th>Oferente</th>
                             <th style="width: 20%">Vigencia</th>
+                            <th>Estado</th>
                             <th style="width: 20%">Información</th>
                         </tr>
                     </thead>
@@ -46,7 +47,8 @@ Convocatorias
                             <td>{{$convocatoria->nombreConvocatoria}}</td>
                             <td>{{$convocatoria->oferenteConvocatoria}}</td>                            
                             <td>{{$convocatoria->vigenciaConvocatoria}}</td>
-                            <td><a href="{{$convocatoria->informacionConvocatoria}}"><i style="text-transform: none; color: #AA1916;">Más información</i></td>
+                            <td>{{$convocatoria->estadoConvocatoria}}</td>
+                            <td><a href="{{Storage::url("archivos/convocatorias/$convocatoria->informacionConvocatoria")}}"><i style="text-transform: none; color: #AA1916;">Más información</i></td>
                         </tr>
                         @endforeach
                     </tbody>

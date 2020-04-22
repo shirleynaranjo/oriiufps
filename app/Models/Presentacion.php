@@ -8,7 +8,7 @@ class Presentacion extends Model
 {
     protected $table='presentacion';
     protected $primaryKey = 'idPresentacion';
-    protected $fillable = ['director','correo','textoPresentacion','textoPresentacion','contacto','mision','vision'];
+    protected $fillable = ['director','correo','textoPresentacion','contacto','mision','vision','fotoDirector'];
     protected $guarded = ['idPresentacion'];
 }
 
