@@ -77,7 +77,15 @@ Route::delete('convocatoria/{id}','FormulariosController@destroyConvocatoria')->
 Route::get('experiencia','FormulariosController@indexExperiencias')->name('experiencia');
 //Presentacion
 Route::get('presentacion/index','FormulariosController@indexPresentacion')->name('presentacion');
+Route::get('presentacion/editar','FormulariosController@editPresentacion')->name('editar_presentacion');
+Route::put('presentacion','FormulariosController@updatePresentacion')->name('actualizar_presentacion');
+//Mision y vision
+Route::get('mision_vision','FormulariosController@indexMision_vision')->name('mision_vision');
+Route::get('mision_vision/editar','FormulariosController@editMision_vision')->name('editar_mision_vision');
+Route::put('mision_vision','FormulariosController@updateMision_vision')->name('actualizar_mision_vision');
 //Contacto
-Route::get('contacto','FormulariosController@indexContacto')->name('contacto');
+Route::get('contacto/index','FormulariosController@indexContacto')->name('contacto');
+Route::get('contacto/editar','FormulariosController@editContacto')->name('editar_contacto');
+Route::put('contacto','FormulariosController@updateContacto')->name('actualizar_contacto');
 //Movilidad
 Route::get('movilidad','FormulariosController@indexMovilidad')->name('movilidad');

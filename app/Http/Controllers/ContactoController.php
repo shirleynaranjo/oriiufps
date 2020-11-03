@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Presentacion;
 use Illuminate\Http\Request;
 
 class ContactoController extends Controller
@@ -13,7 +14,8 @@ class ContactoController extends Controller
      */
     public function index()
     {
-        return view('contacto.index');
+        $item = Presentacion::where('idPresentacion',1)->first();
+        return view('contacto.index', compact('item'));        
     }
 
     /**

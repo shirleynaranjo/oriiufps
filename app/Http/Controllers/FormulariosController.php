@@ -4,10 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ValidacionConvocatoria;
 use App\Http\Requests\ValidacionEvento;
+use App\Http\Requests\ValidacionMision_vision;
 use App\Http\Requests\ValidacionNoticia;
+use App\Http\Requests\ValidacionPresentacion;
+use App\Http\Requests\ValidacionContacto;
 use App\Models\Convocatoria;
 use App\Models\Evento;
+use App\Models\Movilidad;
 use App\Models\Noticia;
+use App\Models\Presentacion;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -15,6 +20,7 @@ use Illuminate\Support\Str;
 
 class FormulariosController extends Controller
 {
+    // EVENTOS 
     /**
      * Undocumented function
      *
@@ -109,6 +115,8 @@ class FormulariosController extends Controller
         }        
         return redirect('evento')->with('mensaje', 'Evento eliminado exitosamente');
     }
+
+    //NOTICIAS
 
     /**
      * Undocumented function
@@ -212,7 +220,74 @@ class FormulariosController extends Controller
         return redirect('noticia')->with('mensaje', 'Noticia eliminada exitosamente');
     }
 
+    // PRESENTACION
+
       /**
+     * Undocumented function
+     *
+     * @return view noticia.index
+     */
+    public function indexPresentacion()
+    {
+        $presentacion = Presentacion::where('idPresentacion',1)->get();
+        return view('formularios.presentacion.index', compact('presentacion'));
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @return view noticia.create
+     */
+    // public function createPresentacion()
+    // {
+    //     
+    // }
+
+    /**
+     * Undocumented function
+     *  
+     * @param Request $request 
+     * @return void
+     */
+    // public function storePresentacion(ValidacionPresentacion $request)
+    // {
+
+    //     
+    // }
+
+    /**
+     * Undocumented function
+     *
+     * @param [type] $id
+     * @return void
+     */
+    public function editPresentacion()
+    {              
+        $data = Presentacion::where('idPresentacion',1)->first();
+        return view('formularios.presentacion.edit', compact('data'));
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @param ValidacionPresentacion $request
+     * @param [type] $id
+     * @return void
+     */     
+    public function updatePresentacion(ValidacionPresentacion $request)
+    {             
+        $presentacion = Presentacion::where('idPresentacion',1)->first();
+
+        if ($imagen1 = Presentacion::setImagen($request->imagen, $presentacion->fotoDirector))
+        $request->request->add(['fotoDirector' => $imagen1]);       
+
+        $presentacion->update($request->all());
+        return redirect('presentacion/index')->with('mensaje', 'Información actualizada exitosamente');
+    }
+
+    //CONVOCATORIAS
+
+          /**
      * Undocumented function
      *
      * @return view noticia.index
@@ -292,6 +367,105 @@ class FormulariosController extends Controller
         return redirect('convocatoria')->with('mensaje', 'Convocatoria eliminada exitosamente');   
         
     }
+
+    //MISION Y VISION 
+
+      /**
+     * Undocumented function
+     *
+     * 
+     */
+    public function indexMision_vision()
+    {
+        $presentacion = Presentacion::where('idPresentacion',1)->get();
+        return view('formularios.mision_vision.index', compact('presentacion'));
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @param [type] $id
+     * @return void
+     */
+    public function editMision_vision()
+    {              
+        $data = Presentacion::where('idPresentacion',1)->first();
+        return view('formularios.mision_vision.edit', compact('data'));
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @param ValidacionMision_vision $request
+     * @param [type] $id
+     * @return void
+     */     
+    public function updateMision_vision(ValidacionMision_vision $request)
+    {             
+        $presentacion = Presentacion::where('idPresentacion',1)->first(); 
+        $presentacion->update($request->all());
+        return redirect('mision_vision')->with('mensaje', 'Información actualizada exitosamente');
+    }
+
+    //CONTACTO
+
+      /**
+     * Undocumented function
+     *
+     * 
+     */
+    public function indexContacto()
+    {
+        $presentacion = Presentacion::where('idPresentacion',1)->get();
+        return view('formularios.contacto.index', compact('presentacion'));
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @param [type] $id
+     * @return void
+     */
+    public function editContacto()
+    {              
+        $data = Presentacion::where('idPresentacion',1)->first();
+        return view('formularios.contacto.edit', compact('data'));
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @param ValidacionContacto $request
+     * @param [type] $id
+     * @return void
+     */     
+    public function updateContacto(ValidacionContacto $request)
+    {             
+        $presentacion = Presentacion::where('idPresentacion',1)->first(); 
+        $presentacion->update($request->all());
+        return redirect('contacto/index')->with('mensaje', 'Información actualizada exitosamente');
+    }
+    
+    //MOVILIDAD
+
+    /**
+     * Undocumented function
+     *
+     * 
+     */
+    public function indexMovilidad()
+    {
+        $movilidad = Movilidad::where('idMovilidad',1)->get();
+        return view('formularios.movilidad.index', compact('movilidad'));
+    }
+
+
+
+
+
+
+
+
 
 
 

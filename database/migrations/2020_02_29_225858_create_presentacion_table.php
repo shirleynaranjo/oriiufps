@@ -17,8 +17,8 @@ class CreatePresentacionTable extends Migration
             $table->bigIncrements('idPresentacion');
             $table->string('director',100);           
             $table->string('correo',100);
-            $table->string('textoPresentacion',500);
-            $table->string('contacto',500);
+            $table->string('textoPresentacion',1000);
+            $table->string('contacto',800);
             $table->string('mision',5000)->nullable();;
             $table->string('vision',5000)->nullable();;
             $table->string('fotoDirector',200)->nullable();

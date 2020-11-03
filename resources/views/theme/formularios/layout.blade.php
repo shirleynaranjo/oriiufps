@@ -44,6 +44,7 @@
                               <li><a href="{{route("movilidad")}}">Movilidad</a></li>
                               <li><a href="{{route("convocatoria")}}">Convocatoria</a></li>
                               <li><a href="{{route("presentacion")}}">Presentacion</a></li>
+                              <li><a href="{{route("mision_vision")}}">mision y vision</a></li>
                               <li><a href="{{route("experiencia")}}">Experiencias</a></li>
                               <li><a href="{{route("contacto")}}">Contacto</a></li>
                             </ul>
